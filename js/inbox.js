@@ -4,7 +4,7 @@ setInterval(() => {
     }
     const total_count = document.querySelectorAll('.an').length;
 
-    const menu_item = document.querySelector('.hA[role="menuitem"] [title="Inbox"]');
+    const menu_item = document.querySelector('[aria-hidden="false"] .hA[role="menuitem"] [title="Inbox"]');
     if (!menu_item) {
         return;
     }
