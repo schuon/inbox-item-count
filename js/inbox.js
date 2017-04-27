@@ -9,15 +9,16 @@ setInterval(function(){
             return;
         }
 
+        let txt = 'Inbox';
         if( total_count > 0 ) {
-            txt = 'Inbox (' + total_count;
+            txt += ' (' + total_count;
             if(total_count % 25 == 0) {
             // TODO find a smarter way to detect if all items are loaded or not
               txt += '+';
             }
             txt += ')';
-            menu_item.textContent = txt
-        } else {
-            menu_item.textContent = 'Inbox';
+        }
+        if (menu_item.textContent !== txt) {
+            menu_item.textContent = txt;
         }
 },1000);
