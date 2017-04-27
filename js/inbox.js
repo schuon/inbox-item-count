@@ -4,9 +4,6 @@ setInterval(function(){
         }
         var total_count = document.querySelectorAll('.an').length;
 
-        if( total_count == undefined || total_count == '' )
-            total_count = 0;
-
         nodes = document.querySelectorAll('li.hA span.sM');
         if( total_count > 0 ) {
             txt = 'Inbox (' + total_count;
