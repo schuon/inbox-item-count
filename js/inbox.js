@@ -4,7 +4,11 @@ setInterval(function(){
         }
         var total_count = document.querySelectorAll('.an').length;
 
-        nodes = document.querySelectorAll('li.hA span.sM');
+        const menu_item = document.querySelector('.hA[role="menuitem"] [title="Inbox"]');
+        if (!menu_item) {
+            return;
+        }
+
         if( total_count > 0 ) {
             txt = 'Inbox (' + total_count;
             if(total_count % 25 == 0) {
@@ -12,8 +16,8 @@ setInterval(function(){
               txt += '+';
             }
             txt += ')';
-            nodes[0].innerText = txt
+            menu_item.textContent = txt
         } else {
-            nodes[0].innerText = 'Inbox';
+            menu_item.textContent = 'Inbox';
         }
 },1000);
