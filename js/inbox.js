@@ -1,4 +1,7 @@
 setInterval(function(){
+        if (document.hidden) {
+            return;
+        }
         var total_count = document.querySelectorAll('.an').length;
 
         if( total_count == undefined || total_count == '' )
