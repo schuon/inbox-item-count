@@ -1,19 +1,22 @@
-setInterval(function(){
-        var total_count = document.querySelectorAll('.an').length;
+setInterval(() => {
+    if (document.hidden) {
+        return;
+    }
+    const total_count = document.querySelectorAll('.an').length;
 
-        if( total_count == undefined || total_count == '' )
-            total_count = 0;
+    const menu_item = document.querySelector('[aria-hidden="false"] .hA[role="menuitem"] [title="Inbox"]');
+    if (!menu_item) {
+        return;
+    }
 
-        nodes = document.querySelectorAll('li.hA span.sM');
-        if( total_count > 0 ) {
-            txt = 'Inbox (' + total_count;
-            if(total_count % 25 == 0) {
-            // TODO find a smarter way to detect if all items are loaded or not
-              txt += '+';
-            }
-            txt += ')';
-            nodes[0].innerText = txt
-        } else {
-            nodes[0].innerText = 'Inbox';
-        }
-},1000);
+    // TODO find a smarter way to detect if all items are loaded or not
+    const has_more_items = total_count % 25 == 0;
+
+    let txt = 'Inbox';
+    if (total_count > 0) {
+        txt += ` (${total_count}${has_more_items ? '+' : ''})`;
+    }
+    if (menu_item.textContent !== txt) {
+        menu_item.textContent = txt;
+    }
+}, 1000);
