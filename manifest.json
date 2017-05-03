@@ -3,6 +3,7 @@
   "name": "Inbox ToDo Count",
   "description": "Shows the number of items in the Google Inbox",
   "version": "0.1.0",
+  "icons": {"128": "img/logo.png" },
 
   "content_scripts": [
     {
