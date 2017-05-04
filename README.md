@@ -10,3 +10,6 @@ Unlike other extensions this includes all (not only unread mail) and tasks. Hand
 Download it from the [Chrome Web Store](https://chrome.google.com/webstore/detail/inbox-todo-count/ceaelmbokkdabmijonojglkmkebimhfk)
 
 Feedback is very much appreciated at [@schuon](https://twitter.com/schuon)
+
+Contributors:
+- [bfred-it](https://github.com/bfred-it)
